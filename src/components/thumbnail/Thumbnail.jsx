@@ -10,6 +10,7 @@ function Thumbnail() {
       setcourses(response.data);
     });
   }, []);
+  console.log(courses);
 
   function T1(name) {
     return (
