@@ -35,7 +35,7 @@ function Thumbnail() {
   return (
     <div className="group-thumbnails">
       <div className="similar-options">Similar options</div>
-      {courses.map(T1)}
+      {Array.from(courses).map(T1)}
     </div>
   );
 }
