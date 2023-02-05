@@ -10,7 +10,7 @@ import Course from "./pages/course/Course";
 import "./app.css";
 
 //import "bootstrap/dist/css/bootstrap.min.css";
-
+export const URL = process.env.REACT_APP_BASE_URL;
 const App = () => {
   return (
     <div>

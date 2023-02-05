@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { URL } from "../../App";
 
 const InputPage = () => {
   const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ const InputPage = () => {
     event.preventDefault();
 
     axios
-      .post("http://localhost:5000/create", {
+      .post(URL + "/create", {
         title,
         content,
       })

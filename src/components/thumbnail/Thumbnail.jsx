@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./thumbnail.css";
 import axios from "axios";
-
+import { URL } from "../../App";
 function Thumbnail() {
   const [courses, setcourses] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/thumbnail").then((response) => {
+    axios.get(URL + "/thumbnail").then((response) => {
       setcourses(response.data);
     });
   }, []);

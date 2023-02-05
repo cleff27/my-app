@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./course_info.css";
 import axios from "axios";
+import { URL } from "../../App";
 const CourseInfo = (props) => {
   const [dataRequired, setdatareq] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/course/" + props.id).then((response) => {
+    axios.get(URL + "/course/" + props.id).then((response) => {
       setdatareq(response.data);
     });
   }, [props.id]);
