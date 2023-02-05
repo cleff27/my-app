@@ -1,0 +1,17 @@
+.panel-title {
+  margin: 30px;
+  margin-left: 0;
+  width: 300px;
+  height: auto;
+  font-family: "Love Ya Like A Sister";
+  color: white;
+  background: #23f0c7;
+  border-radius: 5px;
+  text-align: center;
+}
+.panel-container {
+  padding-bottom: 40px;
+  padding-left: 80px !important;
+  padding-top: 40px;
+  max-width: 100% !important;
+}

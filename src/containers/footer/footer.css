@@ -1,0 +1,13 @@
+.footer-container {
+  background-color: black;
+  margin: 0 !important;
+  max-width: 100% !important;
+  font-size: large;
+  font-family: Inconsolata;
+  padding-left: 100px !important;
+  padding-bottom: 30px !important;
+  padding-top: 40px !important;
+}
+.footer-links {
+  padding-top: 40px;
+}

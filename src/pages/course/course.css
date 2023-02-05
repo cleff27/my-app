@@ -1,0 +1,10 @@
+.course-container {
+  max-width: 100% !important;
+  background-color: white;
+}
+.course-info-col {
+  padding: 100px !important;
+}
+.thumbnail-col {
+  padding: 100px;
+}

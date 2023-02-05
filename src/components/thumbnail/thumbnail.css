@@ -1,0 +1,18 @@
+.single-thumbnail {
+  height: 300px;
+  padding: 5px;
+  border: 2px;
+  border-color: black;
+  font-size: large;
+}
+.group-thumbnails {
+  overflow: scroll;
+}
+.similar-options {
+  font-family: "Love Ya Like A Sister";
+  background-color: #7d7abc;
+  color: #ffe347;
+  font-size: 30px;
+  border-radius: 5px;
+  text-align: center;
+}

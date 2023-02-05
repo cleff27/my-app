@@ -1,0 +1,12 @@
+.about-panel-text {
+  background-color: #ffe347e5;
+  font-family: "Satisfy";
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+.about-panel-container {
+  padding: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
