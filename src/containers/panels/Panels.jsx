@@ -10,13 +10,13 @@ const Panels = () => {
 
       <Row>
         <Col>
-          <Cards text="card 1 just testing it nout" title=" cards" />
+          <Cards introduction="card 1 just testing it nout" title=" cards" />
         </Col>
         <Col>
-          <Cards text="card 1 just testing it nout" title=" cards" />
+          <Cards introduction="card 1 just testing it nout" title=" cards" />
         </Col>
         <Col>
-          <Cards text="card 1 just testing it nout" title=" cards" />
+          <Cards introduction="card 1 just testing it out" title=" cards" />
         </Col>
       </Row>
     </Container>

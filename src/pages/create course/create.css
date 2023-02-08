@@ -1,0 +1,25 @@
+.create-div {
+  padding: 100px;
+  font-family: "Lilita One";
+  font-size: 30px;
+  color: white;
+}
+.create-div h1 {
+  background-color: yellow;
+  width: min-content;
+  padding: 15px 50px;
+  border-radius: 5px;
+}
+.create-div button {
+  background-color: #23f0c7;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+}
+.create-div textarea {
+  font-size: large;
+}
+.thumbnail-img {
+  height: auto;
+  width: 200px;
+}

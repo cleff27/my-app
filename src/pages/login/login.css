@@ -1,0 +1,14 @@
+.error-div {
+  background-color: red;
+  color: white;
+}
+.error-box {
+  text-align: center;
+}
+.create-prompt {
+  color: red;
+  text-align: center;
+}
+.button-div button {
+  background-color: #ef767a;
+}

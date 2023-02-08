@@ -7,6 +7,8 @@
   padding-left: 100px !important;
   padding-bottom: 30px !important;
   padding-top: 40px !important;
+  bottom: 0;
+  position: relative;
 }
 .footer-links {
   padding-top: 40px;

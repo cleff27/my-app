@@ -1,0 +1,18 @@
+.button-div {
+  align-items: center;
+}
+.button-div button {
+  background-color: #23f0c7;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+}
+.delete-button {
+  font-size: large;
+  margin-left: 20px;
+}
+.task-col {
+  align-items: center;
+  display: flex;
+  font-size: large;
+}

@@ -1,10 +1,23 @@
 .video-title {
   font-family: "Love Ya Like A Sister";
   color: #6457a6;
+  font-size: 50px;
 }
 .course-info-div {
   background-color: white;
 }
 .video-content {
   font-size: large;
+}
+.sub-heading {
+  font-size: larger;
+  width: 200px;
+  display: inline-block;
+}
+.content-div {
+  padding: 20px 0;
+}
+iframe {
+  width: 800px !important;
+  height: 550px !important;
 }

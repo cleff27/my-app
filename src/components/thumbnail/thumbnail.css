@@ -1,12 +1,19 @@
 .single-thumbnail {
-  height: 300px;
+  height: fit-content;
   padding: 5px;
   border: 2px;
   border-color: black;
   font-size: large;
+  border-color: beige;
 }
 .group-thumbnails {
   overflow: scroll;
+  max-height: 1200px;
+}
+.group-thumbnails a {
+  text-decoration: none;
+  color: black;
+  font-family: "Lilita One";
 }
 .similar-options {
   font-family: "Love Ya Like A Sister";
@@ -15,4 +22,9 @@
   font-size: 30px;
   border-radius: 5px;
   text-align: center;
+}
+.img-box {
+  height: auto;
+  width: 200px;
+  border-radius: 5px;
 }

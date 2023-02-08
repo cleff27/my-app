@@ -5,16 +5,18 @@ import "./cards.css";
 
 function Cards(props) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={props.img} />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>{props.text}</Card.Text>
-        <Link to="/content/63dea4c15fa41a36956d5522">
-          <Button variant="primary">Know more</Button>
-        </Link>
-      </Card.Body>
-    </Card>
+    <div className="card-div">
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={props.thumbnail} alt="thumbnail" />
+        <Card.Body>
+          <Card.Title>{props.title}</Card.Title>
+          <Card.Text>{props.introduction.substring(0, 50)}</Card.Text>
+          <Link to={"/content/" + props._id}>
+            <Button variant="primary">Know more</Button>
+          </Link>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
 

@@ -1,0 +1,22 @@
+.search-container {
+  padding: 100px;
+  padding-top: 20px;
+}
+.result-heading {
+  text-align: center;
+  padding: 0 100px;
+  padding-bottom: 100px;
+}
+.search-result {
+  /* display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 70px;
+}
+.result-heading span {
+  font-size: 26px;
+  font-family: "Lilita One";
+}

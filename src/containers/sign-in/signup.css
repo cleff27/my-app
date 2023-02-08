@@ -17,6 +17,10 @@
   text-align: center;
   color: #7d7abc;
 }
+.error-span {
+  background-color: red;
+  color: white;
+}
 .row {
   padding: 20px !important;
 }

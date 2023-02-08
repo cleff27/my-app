@@ -18,7 +18,9 @@
   padding: 6px;
   font-family: Inconsolata;
 }
-
+.nav-buttons {
+  padding: 0 10px;
+}
 .navbar-container {
   margin-left: 80px !important;
   font-family: Inconsolata;
