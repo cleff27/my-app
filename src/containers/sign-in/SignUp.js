@@ -10,18 +10,22 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, seterror] = useState("");
+  const [load, setload] = useState("Sign me Up !");
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    setload("Signing Up...");
     axios
       .post(URL + "/register", { name, email, password })
       .then((res) => {
         console.log(res.data);
         if (res.data.msg === "User created successfully") {
+          setload("Sign me Up !");
           navigate("/login");
         }
       })
       .catch((err) => {
+        setload("Sign me Up !");
         const value = err.response.data.msg;
         seterror(value);
       });
@@ -81,7 +85,9 @@ const SignUp = () => {
           <div className="button-div">
             <button type="submit">
               {" "}
-              {"  "}Sign me up !{"   "}{" "}
+              {"  "}
+              {load}
+              {"   "}{" "}
             </button>
           </div>
         </Container>

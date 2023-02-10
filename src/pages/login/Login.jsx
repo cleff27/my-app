@@ -9,13 +9,16 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, seterror] = useState("");
+  const [load, setload] = useState("Log Me In !");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    setload("Logging In ...");
     e.preventDefault();
     axios
       .post(URL + "/login", { email, password })
       .then((res) => {
+        setload("Log Me In !");
         if (res.data.isLoggedIn === true) {
           props.setIsLoggedIn(true);
           props.setUser(res.data.user);
@@ -23,6 +26,7 @@ const Login = (props) => {
         }
       })
       .catch((err) => {
+        setload("Log Me In !");
         console.log(err);
         const value = err.response.data.error;
         seterror(value);
@@ -68,7 +72,9 @@ const Login = (props) => {
           <div className="button-div">
             <button type="submit">
               {" "}
-              {"  "}Log Me In !{"   "}{" "}
+              {"  "}
+              {load}
+              {"   "}{" "}
             </button>
           </div>
           <div className="error-box">

@@ -34,55 +34,61 @@ const App = () => {
   };
   console.log(isLoggedIn);
   return (
-    <div>
+    <div className="super-div">
       <Banner />
       <Navbar
         isLoggedIn={isLoggedIn}
         name={user ? user.name : ""}
         setIsLoggedIn={setIsLoggedIn}
       />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/create"
-          element={
-            isLoggedIn ? (
-              <InputPage
-                isLoggedIn={isLoggedIn}
-                userid={user ? user._id : ""}
-              />
-            ) : (
-              <Login
-                text="Login to create"
-                setIsLoggedIn={setIsLoggedIn}
-                setUser={setUser}
-              />
-            )
-          }
-        />
-        <Route
-          path="/mycourses"
-          element={
-            isLoggedIn ? (
-              <MyCourses id={user ? user._id : ""} />
-            ) : (
-              <Login
-                text="Login to view your courses"
-                setIsLoggedIn={setIsLoggedIn}
-                setUser={setUser}
-              />
-            )
-          }
-        />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/content/:id" element={<Course />} />
-        <Route
-          path="/login"
-          element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser} />}
-        />
-        <Route path="/category/:id" element={<SearchResult />} />
-        <Route path="/*" element={<ErrorPage />} />
-      </Routes>
+      <div className="middle-div">
+        {
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/create"
+              element={
+                isLoggedIn ? (
+                  <InputPage
+                    isLoggedIn={isLoggedIn}
+                    userid={user ? user._id : ""}
+                  />
+                ) : (
+                  <Login
+                    text="Login to create"
+                    setIsLoggedIn={setIsLoggedIn}
+                    setUser={setUser}
+                  />
+                )
+              }
+            />
+            <Route
+              path="/mycourses"
+              element={
+                isLoggedIn ? (
+                  <MyCourses id={user ? user._id : ""} />
+                ) : (
+                  <Login
+                    text="Login to view your courses"
+                    setIsLoggedIn={setIsLoggedIn}
+                    setUser={setUser}
+                  />
+                )
+              }
+            />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/content/:id" element={<Course />} />
+            <Route
+              path="/login"
+              element={
+                <Login setIsLoggedIn={setIsLoggedIn} setUser={setUser} />
+              }
+            />
+            <Route path="/category/:id" element={<SearchResult />} />
+            <Route path="/*" element={<ErrorPage />} />
+          </Routes>
+        }
+      </div>
       <Footer />
     </div>
   );
