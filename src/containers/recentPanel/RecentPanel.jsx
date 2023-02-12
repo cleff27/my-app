@@ -7,7 +7,7 @@ import { URL } from "../../App";
 const RecentPanel = () => {
   const [courses, setcourses] = useState([]);
   useEffect(() => {
-    axios.get(URL + "/most-recent").then((response) => {
+    axios.get(URL + "/mostrecent").then((response) => {
       setcourses(response.data);
     });
   }, []);

@@ -7,7 +7,7 @@ import { URL } from "../../App";
 const LikedPanel = () => {
   const [courses, setcourses] = useState([]);
   useEffect(() => {
-    axios.get(URL + "/most-liked").then((response) => {
+    axios.get(URL + "/mostliked").then((response) => {
       setcourses(response.data);
     });
   }, []);
