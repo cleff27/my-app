@@ -1,14 +1,15 @@
 import React from "react";
-import Panels from "../../containers/panels/Panels";
+import LikedPanel from "../../containers/likedPanel/LikedPanel";
 import HorizontalLine from "../../components/horizontal line/Horizontal_line";
 import AboutPanel from "../../containers/about-panel/About_panel";
+import RecentPanel from "../../containers/recentPanel/RecentPanel";
 
 const HomePage = () => {
   return (
     <div>
-      <Panels />
+      <LikedPanel />
       <HorizontalLine />
-      <Panels />
+      <RecentPanel />
       <HorizontalLine />
       <AboutPanel />
     </div>

@@ -31,7 +31,7 @@ const SearchResult = () => {
               return (
                 <Cards
                   key={card._id}
-                  _id={card._id}
+                  id={card._id}
                   title={card.title}
                   thumbnail={card.vidinfo ? card.vidinfo.thumbnail_url : null}
                   introduction={card.introduction}

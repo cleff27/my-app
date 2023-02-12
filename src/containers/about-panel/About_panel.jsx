@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./about_panel.css";
-
+import logo from "../../images/about-panel.png";
 const About_panel = () => {
   return (
     <Container className="about-panel-container">
       <Row>
         <Col>
           <span>
-            <img src="" alt="some pictue" />
+            <img src={logo} alt="some pictue" />
           </span>
         </Col>
         <Col>

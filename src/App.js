@@ -13,6 +13,7 @@ import "./app.css";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import SearchResult from "./pages/searchResult/SearchResult";
 import MyCourses from "./pages/myCourses/MyCourses";
+import UpdatePage from "./pages/update course/UpdateCourse";
 //import "bootstrap/dist/css/bootstrap.min.css";
 export const URL = process.env.REACT_APP_BASE_URL;
 const App = () => {
@@ -56,6 +57,20 @@ const App = () => {
                 ) : (
                   <Login
                     text="Login to create"
+                    setIsLoggedIn={setIsLoggedIn}
+                    setUser={setUser}
+                  />
+                )
+              }
+            />
+            <Route
+              path="/update/:id"
+              element={
+                isLoggedIn ? (
+                  <UpdatePage />
+                ) : (
+                  <Login
+                    text="Login to Update"
                     setIsLoggedIn={setIsLoggedIn}
                     setUser={setUser}
                   />

@@ -5,7 +5,9 @@ import { URL } from "../../App";
 
 const MyCourses = (props) => {
   const [dataRequired, setdatareq] = useState([]);
+  const [reload, setreload] = useState(false);
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(URL + "/mycourses/" + props.id)
       .then((response) => {
@@ -14,7 +16,10 @@ const MyCourses = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [props.id]);
+  }, [props.id, reload]);
+  function onDelete() {
+    setreload(!reload);
+  }
   return (
     <div>
       {dataRequired.length > 0 ? (
@@ -27,10 +32,12 @@ const MyCourses = (props) => {
               return (
                 <Cards
                   key={card._id}
-                  _id={card._id}
+                  id={card._id}
                   title={card.title}
                   thumbnail={card.vidinfo ? card.vidinfo.thumbnail_url : null}
                   introduction={card.introduction}
+                  onDelete={onDelete}
+                  loggedin={true}
                 />
               );
             })}

@@ -10,3 +10,7 @@
   padding-top: 100px;
   padding-bottom: 100px;
 }
+.about-panel-container img {
+  border-radius: 5px;
+  height: 90%;
+}

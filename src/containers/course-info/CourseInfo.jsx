@@ -9,6 +9,7 @@ const CourseInfo = (props) => {
   const [available, setAvailable] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios.get(URL + "/course/" + props.id).then((response) => {
       setdatareq(response.data);
 
