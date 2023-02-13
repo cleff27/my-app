@@ -18,8 +18,10 @@ const MyCourses = (props) => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setloading(false);
       });
-    setloading(false);
   }, [props.id, reload]);
   function onDelete() {
     setreload(!reload);

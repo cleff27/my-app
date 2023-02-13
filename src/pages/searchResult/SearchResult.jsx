@@ -20,8 +20,10 @@ const SearchResult = () => {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setloading(false);
       });
-    setloading(false);
   }, [id]);
   return (
     <div>

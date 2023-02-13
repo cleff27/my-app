@@ -13,11 +13,15 @@ const CourseInfo = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setloading(true);
-    axios.get(URL + "/course/" + props.id).then((response) => {
-      setdatareq(response.data);
-      setAvailable(true);
-    });
-    setloading(false);
+    axios
+      .get(URL + "/course/" + props.id)
+      .then((response) => {
+        setdatareq(response.data);
+        setAvailable(true);
+      })
+      .finally(() => {
+        setloading(false);
+      });
   }, [props.id]);
   console.log(dataRequired);
 
