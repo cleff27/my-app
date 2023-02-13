@@ -6,10 +6,13 @@ import { URL } from "../../App";
 import ErrorPage from "../errorPage/ErrorPage";
 import Cards from "../../components/cards/Cards";
 import "./searchresult.css";
+import LoadingPage from "../LoadingPage/LoadingPage";
 const SearchResult = () => {
   const { id } = useParams();
   const [dataRequired, setdatareq] = useState([]);
+  const [loading, setloading] = useState(false);
   useEffect(() => {
+    setloading(true);
     axios
       .get(URL + "/category/" + id)
       .then((response) => {
@@ -18,10 +21,13 @@ const SearchResult = () => {
       .catch((err) => {
         console.log(err);
       });
+    setloading(false);
   }, [id]);
   return (
     <div>
-      {Array.from(dataRequired).length > 0 ? (
+      {loading ? (
+        <LoadingPage />
+      ) : Array.from(dataRequired).length > 0 ? (
         <div className="search-container">
           <div className="result-heading">
             <span>Total {dataRequired.length} Results</span>

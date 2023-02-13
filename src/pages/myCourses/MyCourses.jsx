@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cards from "../../components/cards/Cards";
 import { URL } from "../../App";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 const MyCourses = (props) => {
   const [dataRequired, setdatareq] = useState([]);
   const [reload, setreload] = useState(false);
+  const [loading, setloading] = useState(false);
   useEffect(() => {
+    setloading(true);
     window.scrollTo(0, 0);
     axios
       .get(URL + "/mycourses/" + props.id)
@@ -16,13 +19,16 @@ const MyCourses = (props) => {
       .catch((err) => {
         console.log(err);
       });
+    setloading(false);
   }, [props.id, reload]);
   function onDelete() {
     setreload(!reload);
   }
   return (
     <div>
-      {dataRequired.length > 0 ? (
+      {loading ? (
+        <LoadingPage />
+      ) : dataRequired.length > 0 ? (
         <div className="search-container">
           <div className="result-heading">
             <span>Total {dataRequired.length} courses created</span>

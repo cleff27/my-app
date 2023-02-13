@@ -16,7 +16,6 @@ const CourseInfo = (props) => {
     axios.get(URL + "/course/" + props.id).then((response) => {
       setdatareq(response.data);
       setAvailable(true);
-      setloading(false);
     });
     setloading(false);
   }, [props.id]);
