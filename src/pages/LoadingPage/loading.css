@@ -1,0 +1,9 @@
+.loading-div {
+  text-align: center;
+  color: green;
+  font-family: "Lilita One";
+  font-size: 36px;
+
+  padding: 100px;
+  height: 100%;
+}

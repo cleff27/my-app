@@ -3,22 +3,28 @@ import "./course_info.css";
 import axios from "axios";
 import { URL } from "../../App";
 import ErrorPage from "../../pages/errorPage/ErrorPage";
+import LoadingPage from "../../pages/LoadingPage/LoadingPage";
 
 const CourseInfo = (props) => {
   const [dataRequired, setdatareq] = useState([]);
   const [available, setAvailable] = useState(false);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setloading(true);
     axios.get(URL + "/course/" + props.id).then((response) => {
       setdatareq(response.data);
-
       setAvailable(true);
+      setloading(false);
     });
+    setloading(false);
   }, [props.id]);
   console.log(dataRequired);
 
-  return available ? (
+  return loading ? (
+    <LoadingPage />
+  ) : available ? (
     <div className="course-info-div">
       <div className="video-div">
         {dataRequired.vidinfo ? (
