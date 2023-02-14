@@ -5,13 +5,18 @@ import "./course.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-const Course = () => {
+const Course = (props) => {
   const { id } = useParams();
   return (
     <Container className="course-container">
       <Row>
         <Col className="course-info-col">
-          <CourseInfo id={id} />
+          <CourseInfo
+            id={id}
+            isLoggedIn={props.isLoggedIn}
+            likedCourses={props.likedCourses}
+            setLikedCourses={props.setLikedCourses}
+          />
         </Col>
         <Col className="thumbnail-col">
           <Thumbnail />

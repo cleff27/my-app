@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./course_info.css";
 import axios from "axios";
 import { URL } from "../../App";
 import ErrorPage from "../../pages/errorPage/ErrorPage";
 import LoadingPage from "../../pages/LoadingPage/LoadingPage";
-
+import { UserContext } from "../../App";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 const CourseInfo = (props) => {
   const [dataRequired, setdatareq] = useState([]);
   const [available, setAvailable] = useState(false);
   const [loading, setloading] = useState(false);
+  const [likes, setlike] = useState(0);
+  const [isliked, setIsLiked] = useState(false);
+  const { user } = useContext(UserContext);
+  const [userId, setuser] = useState(null);
+  console.log(userId);
+  useEffect(() => {
+    setuser(user ? user._id : null);
+    setIsLiked(false);
+    if (props.isLoggedIn && props.likedCourses.includes(props.id)) {
+      setIsLiked(true);
+    }
+  }, [props.isLoggedIn, props.likedCourses, props.id, user]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,12 +31,45 @@ const CourseInfo = (props) => {
       .then((response) => {
         setdatareq(response.data);
         setAvailable(true);
+        setlike(response.data.liked);
       })
       .finally(() => {
         setloading(false);
       });
   }, [props.id]);
-  console.log(dataRequired);
+
+  function handleLike() {
+    if (!props.isLoggedIn) {
+      window.alert("Login to like");
+      return;
+    }
+
+    if (!isliked) {
+      axios
+        .post(URL + "/like-course", { userId, courseId: props.id })
+        .then((res) => {
+          props.setLikedCourses([...props.likedCourses, props.id]);
+          setIsLiked(true);
+          setlike(likes + 1);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      axios
+        .post(URL + "/unlike-course", { userId, courseId: props.id })
+        .then((res) => {
+          props.setLikedCourses(
+            props.likedCourses.filter((c) => c !== props.id)
+          );
+          setIsLiked(false);
+          setlike(likes - 1);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  }
 
   return loading ? (
     <LoadingPage />
@@ -44,7 +90,20 @@ const CourseInfo = (props) => {
           ></iframe>
         )}
       </div>
-      <div className="video-title">{dataRequired.title}</div>
+      <div className="video-title">
+        {dataRequired.title}
+        <div className="like-div">
+          {
+            <ThumbUpIcon
+              baseClassName="material-icons-outlined"
+              fontSize="large"
+              onClick={handleLike}
+            />
+          }{" "}
+          : {likes}
+        </div>
+      </div>
+
       <div className="video-content">
         <div className="content-div">{dataRequired.introduction}</div>
         <br />

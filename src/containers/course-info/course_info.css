@@ -21,3 +21,7 @@ iframe {
   width: 800px !important;
   height: 550px !important;
 }
+.like-div {
+  display: inline;
+  float: right;
+}
